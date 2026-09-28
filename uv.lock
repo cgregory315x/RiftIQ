@@ -1,0 +1,37 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "riftiq-backend",
+    "riftiq-core",
+    "riftiq-pipeline",
+]
+
+[[package]]
+name = "riftiq-backend"
+version = "0.1.0"
+source = { editable = "backend" }
+dependencies = [
+    { name = "riftiq-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "riftiq-core", editable = "core" }]
+
+[[package]]
+name = "riftiq-core"
+version = "0.1.0"
+source = { editable = "core" }
+
+[[package]]
+name = "riftiq-pipeline"
+version = "0.1.0"
+source = { editable = "pipeline" }
+dependencies = [
+    { name = "riftiq-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "riftiq-core", editable = "core" }]
